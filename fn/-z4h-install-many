@@ -49,6 +49,7 @@ local success
   case ${(L)uname_sm} in
     'darwin arm64');;
     'darwin x86_64');;
+    'freebsd amd64');;
     'linux aarch64');;
     'linux armv6l');;
     'linux armv7l');;
