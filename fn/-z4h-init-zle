@@ -134,7 +134,7 @@ if (( $+terminfo[civis] && $+terminfo[cnorm] )) && [[ -v _z4h_tty_fd ]]; then
     [[ -t 1 ]] && echoti civis || echoti civis >&$_z4h_tty_fd
   }
   function -z4h-cursor-show() {
-    # See https://github.com/romkatv/powerlevel10k/issues/1699.
+    # See https://github.com/tacgnol/powerlevel10k/issues/1699.
     local cnorm=${${terminfo[cnorm]-}:/*$'\e[?25h'(|'\e'*)/$'\e[?25h'}
     [[ -t 1 ]] && print -rn -- $cnorm || print -rnu $_z4h_tty_fd -- $cnorm
   }
@@ -908,7 +908,7 @@ else
 fi
 
 # Define _zsh_highlight before sourcing history-substring-search to work around bugs
-# in the latter: https://github.com/romkatv/zsh4humans/issues/58.
+# in the latter: https://github.com/tacgnol/zsh4humans/issues/58.
 function _zsh_highlight() {
   if [[ $WIDGET == zle-line-finish || ! -v _z4h_substring_search_highlight ]]; then
     region_highlight=()
